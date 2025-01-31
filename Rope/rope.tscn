@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://doryvt6e4akg1"]
+
+[ext_resource type="Script" path="res://Rope/Rope.cs" id="1_3nk6l"]
+[ext_resource type="Texture2D" uid="uid://b87scnadp2w66" path="res://Rope/Gfx/RopeTexture.png" id="1_rhli7"]
+[ext_resource type="PackedScene" uid="uid://c03qw3lnhs5fx" path="res://Rope/rope_segment.tscn" id="2_ihnnq"]
+
+[node name="Rope" type="Node2D"]
+script = ExtResource("1_3nk6l")
+
+[node name="Line2D" type="Line2D" parent="."]
+texture_repeat = 2
+texture = ExtResource("1_rhli7")
+texture_mode = 1
+
+[node name="RopeStart" parent="." instance=ExtResource("2_ihnnq")]
+position = Vector2(465, 43)
+freeze = true
+
+[node name="RopeEnd" parent="." instance=ExtResource("2_ihnnq")]
+position = Vector2(160, 124)

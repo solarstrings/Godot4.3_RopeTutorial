@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://c03qw3lnhs5fx"]
+
+[ext_resource type="Script" path="res://Rope/RopeSegment.cs" id="1_xmu7f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fsxh5"]
+radius = 2.0
+height = 20.0
+
+[node name="RopeSegment" type="RigidBody2D"]
+mass = 25.0
+gravity_scale = 0.5
+linear_damp = 0.15
+script = ExtResource("1_xmu7f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("CapsuleShape2D_fsxh5")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(0, 4)
